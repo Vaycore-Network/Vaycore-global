@@ -49,6 +49,15 @@ class Language(
             )
 
         /**
+         * Returns a list of supported languages
+         */
+        val availableLanguages: List<String>
+            get() = translationsDirectory.toFile()
+                .listFiles { file -> file.isFile && file.extension.contains("yml") }
+                ?.map { it.nameWithoutExtension }
+                ?: listOf()
+
+        /**
          * Loads a language by name
          * @param name The name of the language to load
          */
