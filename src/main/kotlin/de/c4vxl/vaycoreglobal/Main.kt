@@ -1,6 +1,7 @@
 package de.c4vxl.vaycoreglobal
 
 import de.c4vxl.vaycoreglobal.language.Language
+import de.c4vxl.vaycoreglobal.plugin.commands.LanguageCommand
 import dev.jorel.commandapi.CommandAPI
 import dev.jorel.commandapi.CommandAPIPaperConfig
 import org.bukkit.configuration.file.FileConfiguration
@@ -37,6 +38,9 @@ class Main : JavaPlugin() {
 
         // Load langs
         Language.load()
+
+        // Register commands
+        LanguageCommand
 
         logger.info("[+] $name has been enabled!")
     }

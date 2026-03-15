@@ -1,0 +1,5 @@
+"prefix": "<gray>[</gray><red>Vaycore</red><gray>[</gray>"
+
+"command.language.desc": "Allows players to customize their language preference for the network."
+"command.language.failure.invalid_language": "${prefix} <red>That language does not exist!</red>"
+"command.language.success": "${prefix} <green>Your language preference has been updated successfully!</green>"
