@@ -1,0 +1,9 @@
+language:
+  # The directory where translation files will be saved in to
+  translations-dir: "./translations/"
+
+  # Path to player language-preference database file
+  db: "./languages.yml"
+
+  # The default language
+  default: "english"

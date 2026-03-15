@@ -1,7 +1,9 @@
 package de.c4vxl.vaycoreglobal
 
+import de.c4vxl.vaycoreglobal.language.Language
 import dev.jorel.commandapi.CommandAPI
 import dev.jorel.commandapi.CommandAPIPaperConfig
+import org.bukkit.configuration.file.FileConfiguration
 import org.bukkit.plugin.java.JavaPlugin
 import java.util.logging.Logger
 
@@ -9,6 +11,7 @@ class Main : JavaPlugin() {
     companion object {
         lateinit var instance: Main
         lateinit var logger: Logger
+        lateinit var config: FileConfiguration
     }
 
     override fun onLoad() {
@@ -26,6 +29,14 @@ class Main : JavaPlugin() {
     override fun onEnable() {
         // Enable CommandAPI
         CommandAPI.onEnable()
+
+        // Load config
+        saveResource("config.yml", false)
+        reloadConfig()
+        Main.config = this.config
+
+        // Load langs
+        Language.load()
 
         logger.info("[+] $name has been enabled!")
     }
