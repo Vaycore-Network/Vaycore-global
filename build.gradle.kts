@@ -50,6 +50,10 @@ publishing {
             version = "1.0.0"
         }
     }
+
+    repositories {
+        maven(layout.buildDirectory.dir("repo"))
+    }
 }
 
 // Mojang mapped
